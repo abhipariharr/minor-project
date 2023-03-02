@@ -1,18 +1,25 @@
 #include<stdio.h>
 #include<conio.h>
+#include<math.h>
+
 void sum(int,int);
 void sub(int,int);
 void multi(int,int);
 void divide(float,float);
+void root(int);
+void squareroot(int);
+
 int main()
 {
-    int a,b,c,f;
+    int a,b,c;
     float d,e;
     printf("***********************Calculator***********************\n ");
     printf("1:Addition\t\t\t\t\t");
     printf("\t2:subtraction\n");
     printf(" 3:multiplication\t\t\t\t");
-    printf("4:division\n\n");
+    printf("4:division\n");
+    printf("5:Root\t\t\t\t\t");
+    printf("6:Squareroot\n\n");
     printf("\t\t\t\tEnter your choice=");
     scanf("%d", &a);
     
@@ -47,9 +54,24 @@ int main()
             divide(d,e);
             break;
         }
+        case 5:
+        {
+            printf("Enter the number=");
+            scanf("%d",&b);
+            root(b);
+            break;
+        }
+        case 6:
+        {
+            printf("Enter the number=");
+            scanf("%d",&b);
+            squareroot(b);
+            break;
+        }
     }
     getch();
 }
+
         void sum(int x,int y)
         {
             int sum;
@@ -73,4 +95,16 @@ int main()
             float divide;
             divide=x/y;
             printf("division=%f", divide);
+        }
+        void root(int x)
+        {
+            int root;
+            root=x*x;
+            printf("Root of %d is %d",x,root);
+        }
+        void squareroot(int x)
+        {
+            int squareroot;
+            squareroot=sqrt(x);
+            printf("squareroot=%d",squareroot);
         }
